@@ -1,0 +1,8 @@
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.childWrapper{
+  flex:1
+}
