@@ -1,14 +1,24 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
-import GoogleLoginButton from "./components/googleLoginButton";
+import Login from "./components/Login";
 
 function App() {
   return (
     <>
-      <div className="centre-">
-        <GoogleLoginButton></GoogleLoginButton>
-      </div>
+      <RouterProvider router={router} />
     </>
   );
 }
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login />,
+  },
+  {
+    path: "/home",
+    element: <>hii</>,
+  },
+]);
 
 export default App;

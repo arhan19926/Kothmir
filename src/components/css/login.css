@@ -1,0 +1,40 @@
+.mainContainer {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.loginButton {
+  border-radius: 8px;
+  border: 1px solid grey;
+  padding: 0.6em 1.2em;
+  width: 80%;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #3d9d17;
+  cursor: pointer;
+}
+.loginButton:hover {
+  background-color: #3d9d17;
+  transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  opacity: 90%;
+}
+.leftContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  /* border: 1px solid red; */
+  align-items: center;
+  justify-content: center;
+  background-color: #e6e6e6;
+}
+.rightContainer {
+  background-image: url("/kothmir_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
