@@ -1,12 +1,11 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import GoogleLoginButton from "./components/googleLoginButton";
+import routes from "./routes/routes";
 
 function App() {
   return (
     <>
-      <div className="centre-">
-        <GoogleLoginButton></GoogleLoginButton>
-      </div>
+      <RouterProvider router={routes} />
     </>
   );
 }
