@@ -1,20 +1,27 @@
 import { useNavigate } from "react-router-dom";
 import { STATUS_CODES } from "../utils/constants/status-codes.constant";
 import { BACKEND_ENDPOINT } from "../utils/constants/common.constant";
-import { useState } from "react";
-
+import { GoogleLogin } from "@react-oauth/google";
+import axios from "axios";
 const GoogleLoginButton = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleGoogleLogin = async () => {
-    setIsLoading(true);
+  const handleGoogleLogin = async (credential: string) => {
+    // setIsLoading(true);
     try {
-      const apiData = await fetch(BACKEND_ENDPOINT);
-      const result = await apiData.json();
-
-      if (result.statusCode === STATUS_CODES.OK && result.data) {
-        // window.open(result.data, "_blank");
-        window.location.href = result.data;
+      const response = await axios.post(
+        BACKEND_ENDPOINT,
+        { accessToken: credential },
+        {
+          // withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.data.statusCode === STATUS_CODES.OK) {
+        navigate("/home");
       } else {
         console.error("Invalid response from Backend");
       }
@@ -25,12 +32,16 @@ const GoogleLoginButton = () => {
   };
 
   return (
-    <button
-      className="loginButton"
-      onClick={() => !isLoading && handleGoogleLogin()}
-    >
-      {isLoading ? "Loading..." : "Login with Google"}
-    </button>
+    <GoogleLogin
+      onSuccess={async (credentialResponse) => {
+        console.log(credentialResponse);
+        const token = credentialResponse.credential as string;
+        handleGoogleLogin(token);
+      }}
+      onError={() => {
+        console.log("Login Failed");
+      }}
+    />
   );
 };
 
