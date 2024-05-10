@@ -34,7 +34,6 @@ const GoogleLoginButton = () => {
   return (
     <GoogleLogin
       onSuccess={async (credentialResponse) => {
-        console.log(credentialResponse);
         const token = credentialResponse.credential as string;
         handleGoogleLogin(token);
       }}
