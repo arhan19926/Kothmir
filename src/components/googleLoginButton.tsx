@@ -3,18 +3,17 @@ import { STATUS_CODES } from "../utils/constants/status-codes.constant";
 import { BACKEND_ENDPOINT } from "../utils/constants/common.constant";
 import { GoogleLogin } from "@react-oauth/google";
 import axios from "axios";
+
 const GoogleLoginButton = () => {
-  // const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleGoogleLogin = async (credential: string) => {
-    // setIsLoading(true);
     try {
       const response = await axios.post(
         BACKEND_ENDPOINT,
         { accessToken: credential },
         {
-          // withCredentials: true,
+          withCredentials: true,
           headers: {
             "Content-Type": "application/json",
           },
