@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { STATUS_CODES } from "../utils/constants/status-codes.constant";
-import { BACKEND_ENDPOINT } from "../utils/constants/common.constant";
+
 import { GoogleLogin } from "@react-oauth/google";
 import axios from "axios";
+import { BACKEND_ROUTES } from "../utils/constants/common.constant";
 
 const GoogleLoginButton = () => {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ const GoogleLoginButton = () => {
   const handleGoogleLogin = async (credential: string) => {
     try {
       const response = await axios.post(
-        BACKEND_ENDPOINT,
+        BACKEND_ROUTES.AUTHENTICATION.LOGIN,
         { accessToken: credential },
         {
           withCredentials: true,
