@@ -12,7 +12,7 @@ export const validateUser = async () => {
         },
       }
     );
-    return response.data;
+    return response;
   } catch (error) {
     console.log(error);
     throw error;
