@@ -5,15 +5,16 @@
   gap: 40px;
 }
 
-a{
+.sidebarWrapper a {
   padding: 8px 16px;
   border-radius: 8px;
   text-decoration: none;
   color: #3d9d17;
 }
-a:hover{
+
+.sidebarWrapper a:hover {
   color: white;
-  cursor: progress;
+  cursor: pointer;
   background-color: #3d9d17;
   transition: background-color 0.25s ease-in-out, box-shadow 0.55s ease-in-out;
   opacity: 90%;

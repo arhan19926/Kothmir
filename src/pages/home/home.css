@@ -1,3 +1,9 @@
-.homeWrapper{
-    margin: 0;
+.homeWrapper {
+  margin: 0;
+}
+
+.mainContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
