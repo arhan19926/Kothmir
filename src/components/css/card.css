@@ -1,0 +1,21 @@
+.cardContainer {
+  border: 1px solid grey;
+  border-radius: 8px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2px;
+}
+
+.cardImage {
+  width: 150px;
+  height: 170px;
+  transition: transform 0.2s ease-out;
+}
+
+.cardImage:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}

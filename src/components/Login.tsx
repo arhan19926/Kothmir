@@ -1,4 +1,3 @@
-
 import GoogleLoginButton from "./googleLoginButton";
 import "./css/login.css";
 const Login = () => {
@@ -6,7 +5,10 @@ const Login = () => {
     <div className="mainContainer">
       <div className="leftContainer">
         <div className="logoContainer">
-          <img className="loginPageImage" src="/kothmir_login.png"></img>
+          <img
+            className="loginPageImage"
+            src="src/assets/images/kothmir_login.png"
+          ></img>
           <h2>Kothmir</h2>
         </div>
         <GoogleLoginButton />
