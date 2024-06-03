@@ -10,7 +10,7 @@
   border-radius: 8px;
   border: 1px solid grey;
   padding: 0.6em 1.2em;
-  width:40%;
+  width: 40%;
   font-size: 1em;
   font-weight: 500;
   font-family: "Montserrat", sans-serif;
@@ -34,7 +34,7 @@
   background-color: hsl(216.92deg 22.03% 88.43%);
 }
 .rightContainer {
-  background-image: url("src/assets/images/kothmir_bg.jpg");
+  background-image: url("../../assets/images/kothmir_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
