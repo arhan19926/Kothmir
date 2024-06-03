@@ -9,3 +9,15 @@ export const BACKEND_ROUTES = {
     LOGIN: `${BASE_BACKEND_URL}/${AUTH}/google/redirect`,
   },
 };
+
+export interface IRecipeType {
+  _id: string;
+  id: string;
+  __v: number;
+  date: string;
+  description: string;
+  imageUrl: string;
+  name: string;
+  origin: string;
+  veg: boolean;
+}
